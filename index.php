@@ -104,7 +104,7 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                         <?php 
-                                        $tval = "SELECT SUM(COALESCE(sub_total,0)) AS rtotal FROM tree_solds";
+                                        $tval = "SELECT TO_CHAR(SUM(CAST(sub_total AS NUMERIC)),'999,999.99') AS rtotal FROM tree_solds";
                                         $tvalue = pg_query($tval);
                                         $trev = pg_fetch_assoc($tvalue);
                                         echo $trev['rtotal'];
