@@ -49,30 +49,21 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Tacoli Sales Report</a>
+                <a class="navbar-brand" href="index.php">Tacoli Sales Report</a>
             </div>
 
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <!--<li>
+                        <a href="location1.php"><i class="fa fa-fw fa-location-arrow"></i> FRIDAU</a>
                     </li>
                     <li>
-                        <a href="location1.html"><i class="fa fa-fw fa-location-arrow"></i> Location 1</a>
-                    </li>
-                    <li>
-                        <a href="location2.html"><i class="fa fa-fw fa-location-arrow"></i> Location 2</a>
-                    </li>
-                    <li>
-                        <a href="location3.html"><i class="fa fa-fw fa-location-arrow"></i> Location 3</a>
-                    </li>
-                    <li>
-                        <a href="location4.html"><i class="fa fa-fw fa-location-arrow"></i> Location 4</a>
-                    </li>
-                    <li>
-                        <a href="location5.html"><i class="fa fa-fw fa-location-arrow"></i> Location 5</a>
-                    </li>
+                        <a href="location2.php"><i class="fa fa-fw fa-location-arrow"></i> STAENDE</a>
+                    </li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -116,8 +107,6 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -150,8 +139,6 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                             </div>
                             <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -203,7 +190,6 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                                     </table>
                                 </div>
                                 <div class="text-right">
-                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
