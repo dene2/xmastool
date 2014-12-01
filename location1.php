@@ -59,7 +59,13 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
-                        <a href="location1.php"><i class="fa fa-fw fa-location-arrow"></i> FRIDAU</a>
+                        <a href="location1.php"><i class="fa fa-fw fa-location-arrow"></i> LUDOVICO</a>
+                    </li>
+                    <li class="">
+                        <a href="location2.php"><i class="fa fa-fw fa-location-arrow"></i> CLEMENS</a>
+                    </li>
+                    <li class="">
+                        <a href="location3.php"><i class="fa fa-fw fa-location-arrow"></i> VINCENZ</a>
                     </li>
                     <!--<li>
                         <a href="location2.php"><i class="fa fa-fw fa-location-arrow"></i> STAENDE</a>
@@ -78,7 +84,7 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                     <div class="col-lg-12">
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> FRIDAU
+                                <i class="fa fa-dashboard"></i> LUDOVICO
                             </li>
                         </ol>
                     </div>
@@ -95,10 +101,10 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                         <?php 
-                                        $tval = "SELECT trees.tree_type,tree_solds.transaction_id,tree_solds.actual_height,tree_solds.selling_height,tree_solds.sub_total,transactions.date_purchased,TO_CHAR(SUM(CAST(sub_total AS NUMERIC)),'999,999.99') AS rtotal  FROM tree_solds
-                                                        left join trees on tree_solds.tree_id = trees.id
-                                                        left join transactions on transactions.id = tree_solds.transaction_id
-                                                        WHERE user_id = 10 ORDER BY transactions.date_purchased DESC";
+                                        $tval = "SELECT TO_CHAR(SUM(CAST(tree_solds.sub_total AS NUMERIC)),'999,999.99') AS rtotal FROM tree_solds
+                                                 left join trees on tree_solds.tree_id = trees.id
+                                                 left join transactions on transactions.id = tree_solds.transaction_id
+                                                 GROUP BY user_id = 9 ORDER BY transactions.date_purchased DESC";
                                         $tvalue = pg_query($tval);
                                         $trev = pg_fetch_assoc($tvalue);
                                         echo $trev['rtotal'];
@@ -130,7 +136,7 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                                         $sql = "SELECT trees.tree_type,tree_solds.transaction_id,tree_solds.actual_height,tree_solds.selling_height,tree_solds.sub_total,transactions.date_purchased FROM tree_solds
                                                         left join trees on tree_solds.tree_id = trees.id
                                                         left join transactions on transactions.id = tree_solds.transaction_id
-                                                        WHERE user_id = 10 ORDER BY transactions.date_purchased DESC";
+                                                        WHERE user_id = 9 ORDER BY transactions.date_purchased DESC";
 
                                         $res = pg_query($sql);
 
@@ -178,7 +184,7 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                                             $query = ('SELECT trees.tree_type,tree_solds.transaction_id,tree_solds.actual_height,tree_solds.selling_height,tree_solds.sub_total,transactions.date_purchased FROM tree_solds
                                             			left join trees on tree_solds.tree_id = trees.id
                                             			left join transactions on transactions.id = tree_solds.transaction_id
-                                            			WHERE user_id = 10 ORDER BY transactions.date_purchased DESC');
+                                            			WHERE user_id = 9 ORDER BY transactions.date_purchased DESC');
 
 
                                             $result = pg_query($query); 

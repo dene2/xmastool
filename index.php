@@ -61,6 +61,15 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
 					<li>
                         <a href="location1.php"><i class="fa fa-fw fa-location-arrow"></i> FRIDAU</a>
                     </li>
+                    <li class="">
+                        <a href="location1.php"><i class="fa fa-fw fa-location-arrow"></i> LUDOVICO</a>
+                    </li>
+                    <li class="">
+                        <a href="location2.php"><i class="fa fa-fw fa-location-arrow"></i> CLEMENS</a>
+                    </li>
+                    <li class="">
+                        <a href="location3.php"><i class="fa fa-fw fa-location-arrow"></i> VINCENZ</a>
+                    </li>
                     <!--
                     <li>
                         <a href="location2.php"><i class="fa fa-fw fa-location-arrow"></i> STAENDE</a>
