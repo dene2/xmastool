@@ -151,6 +151,72 @@ $db = pg_connect('host=ec2-54-228-232-120.eu-west-1.compute.amazonaws.com dbname
                             </a>
                         </div>
                     </div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">
+                                        <?php 
+                                        $tval = "SELECT TO_CHAR(SUM(CAST(sub_total AS NUMERIC)),'999,999.99') AS rtotal FROM tree_solds
+                                                 left join trees on tree_solds.tree_id = trees.id
+                                                 left join transactions on transactions.id = tree_solds.transaction_id
+                                                 WHERE user_id = 8 AND DATE(transactions.date_purchased) = now()::date";
+                                        $tvalue = pg_query($tval);
+                                        $trev = pg_fetch_assoc($tvalue);
+                                        echo $trev['rtotal'];
+                                        ?>
+                                        </div>
+                                        <div>Profit TODAY!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-blue">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tree fa-5x"></i>
+                                    </div>
+
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">
+                                        <?php 
+
+                                        $sql = "SELECT * FROM tree_solds
+                                                left join trees on tree_solds.tree_id = trees.id
+                                                left join transactions on transactions.id = tree_solds.transaction_id
+                                                WHERE DATE(transactions.date_purchased) = now()::date";
+
+                                        $res = pg_query($sql);
+
+                                        $count = pg_num_rows($res);
+
+                                        echo $count;
+                                        ?>
+                                        </div>
+                                        <div>Tree Sold TODAY!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
 
